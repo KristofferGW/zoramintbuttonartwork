@@ -1,4 +1,4 @@
 const generateSVG = require('./svgGenerations');
 
-const svg = generateSVG("0xEc01C81fB0asdfst3234234edswr325r", 123, 689);
+const svg = generateSVG("0xa4B0bfcD985fE1AdBFF2ade8C38E0E6EF335e985", 18198145, 1);
 console.log(svg);
