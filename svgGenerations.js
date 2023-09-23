@@ -6,7 +6,7 @@ function generateSVG(backgroundColor, text, blockNumber, tokenId) {
         <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <rect width="200" height="200" fill="${colorToHex(backgroundColor)}" />
             <text x="10" y="50" font-size="20">${text}</text>
-            <text x="10" y="80" font-size="14">Block: ${blockNumber}</text>
+            <text x="10" y="80" font-size="14">Minted in Zora Block: ${blockNumber}</text>
             <text x="10" y="100" font-size="14">Token ID: ${tokenId}</text>
         </svg>
     `;
