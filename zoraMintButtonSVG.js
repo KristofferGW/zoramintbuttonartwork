@@ -1,4 +1,4 @@
 const generateSVG = require('./svgGenerations');
 
-const svg = generateSVG(23345, 150);
+const svg = generateSVG();
 console.log(svg);
