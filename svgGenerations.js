@@ -1,9 +1,12 @@
-const crypto = require('crypto'); // For generating colors
-const fs = require('fs'); // For saving the SVG to a file
+const crypto = require('crypto');
+const fs = require('fs');
 
-function generateSVG(minterAddress, blockNumber, tokenId) {
-    // Generate a unique color based on minter's address and block number
-    const hash = crypto.createHash('sha256').update(minterAddress + blockNumber).digest('hex');
+function generateSVG(blockNumber, tokenId) {
+    // Combine blockNumber and tokenId to create a unique seed
+    const uniqueSeed = blockNumber.toString() + tokenId.toString();
+
+    // Generate a color based on the unique seed
+    const hash = crypto.createHash('sha256').update(uniqueSeed).digest('hex');
     const dynamicColor = `#${hash.slice(0, 6)}`; // Use the first 6 characters of the hash as the dynamic color
 
     // Calculate the brightness of the dynamic color (higher value means brighter color)
@@ -37,7 +40,7 @@ function generateSVG(minterAddress, blockNumber, tokenId) {
         </svg>
     `;
 
-    // Save the SVG to a file (optional)
+    // Save the SVG to a file
     fs.writeFileSync('output.svg', svgString);
 
     return svgString;
